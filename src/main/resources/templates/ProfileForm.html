@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>department</title>
+</head>
+<body>
+
+ <th:block th:insert="Header.html"></th:block>
+ 
+	<div class="container-fluid">
+
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white">
+				<h4>Your Profile Details </h4>
+			</div>
+
+
+			<div class="card-body">
+			
+
+				<div class="row m-2">
+					<div class="col-4">FirstName</div>
+					<div class="col-6">
+						 [[${session.validuser.firstName}]]
+					</div>
+				</div>
+				
+				<div class="row m-2">
+					<div class="col-4">LastName</div>
+					<div class="col-6">
+						[[${session.validuser.lastName}]]
+					</div>
+				</div>
+				
+				<div class="row m-2">
+					<div class="col-4">UserName</div>
+					<div class="col-6">
+						[[${session.validuser.userName}]]
+					</div>
+				</div>
+				
+				<div class="row m-2">
+					<div class="col-4">
+						<a  href="/gallery"><input type="submit" value="Back" class="btn btn-primary btn-lg"> </a>
+				   </div>
+				</div>
+				
+			</div>
+
+			<div class="card-footer bg-warning text-center">copyright@2023</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

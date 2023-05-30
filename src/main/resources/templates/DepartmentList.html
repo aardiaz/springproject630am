@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>departmentList</title>
+</head>
+<body>
+
+<th:block th:insert="Header.html"></th:block>
+
+<div class="container-fluid">
+
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white">
+				<h4>Department List</h4>
+			</div>
+
+            <div class="m-2">
+             <a href="/department"> <input type="submit" value="AddNew" class="btn btn-success float-end "> </a>
+            </div>
+
+			<div class="card-body">
+			
+			    <table class="table table-striped table-hover">
+          
+             <thead>
+                <tr>
+                  <td> Department Name</td>
+                  <td> Department Head</td>
+                  <td> Department Phone</td>
+                  <td> Action</td>
+                </tr>
+             </thead>
+           
+              <tbody>
+                <tr th:each="department : ${dlist}">
+                  <td> [[${department.dpt_name}]]</td>
+                  <td> [[${department.dpt_hod}]]</td>
+                  <td> [[${department.dpt_phone}]]</td>
+                  <td> 
+                      <a th:href="@{/edit(id=${department.id})}">  <input type="submit" value="Edit"    class="btn btn-success"></a>
+                      <a th:href="@{'/delete/'+${department.id}}"> <input type="submit" value="Delete"  class="btn btn-danger"></a>
+                  </td>
+                </tr>
+              </tbody>
+   
+			</table>
+      
+			 
+			</div>
+
+			<div class="card-footer bg-warning text-center">copyright@2023</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
